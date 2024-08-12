@@ -1,0 +1,39 @@
+/* src/app/globals.css */
+
+/* Asegúrate de que el body y el html ocupen toda la altura de la pantalla */
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  background-image: url('/Backgr2.webp'); /* Ruta a tu imagen de fondo */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed; /* La imagen se fija al fondo mientras se hace scroll */
+}
+
+/* Asegura que los elementos no tengan fondo para que la imagen se vea */
+body > * {
+  background-color:#2b2115c1!important;
+}
+
+/* La clase page-container toma todo el espacio disponible excepto el ocupado por el footer */
+.page-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* El main crece para ocupar todo el espacio restante */
+main {
+  flex: 1;
+  background-color: transparent; /* Asegura que el main no tenga fondo */
+}
+
+/* El footer permanece en la parte inferior de la página */
+footer {
+  flex-shrink: 0;
+  background-color: rgba(0, 0, 0, 0.7); /* Fondo semitransparente para el footer si se desea */
+}
