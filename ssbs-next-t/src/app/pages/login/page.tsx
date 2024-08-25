@@ -19,7 +19,12 @@ export default function LoginPage() {
         if (authContext?.login) {
             try {
                 await authContext.login(email, password);
-                router.push('/'); // O cualquier otra ruta a la que quieras redirigir después del login
+                console.log(authContext.require_change_password)
+                if(authContext.require_change_password){
+                    router.push('/pages/resetpassword');
+                }else{
+                  router.push('/'); // O cualquier otra ruta a la que quieras redirigir después del login
+                }
             } catch (err) {
                 if (err instanceof Error) {
                     setError(err.message || 'Error al iniciar sesión');
@@ -78,8 +83,9 @@ export default function LoginPage() {
                             onChange={(e) => setPassword(e.target.value)}
                         />
                         {error && <Typography color="error">{error}</Typography>}
+                        <a style={{textDecoration:'none', color:'#8C7C69', fontStyle:'italic'}} href="/pages/forgotpassword">¿Has olvidado tu contraseña?</a>
                         <Button
-                            type="submit"
+                            type="submit"  
                             fullWidth
                             variant="contained"
                             sx={{ mt: 2, mb: 1 }}
