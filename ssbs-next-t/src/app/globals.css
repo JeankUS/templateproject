@@ -1,22 +1,27 @@
 /* src/app/globals.css */
 
 /* Asegúrate de que el body y el html ocupen toda la altura de la pantalla */
-html, body {
+html,
+body {
   height: 100%;
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
   display: flex;
   flex-direction: column;
-  background-image: url('/Backgr2.webp'); /* Ruta a tu imagen de fondo */
+  background-image: url('/Backgr2.webp');
+  /* Ruta a tu imagen de fondo */
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  background-attachment: fixed; /* La imagen se fija al fondo mientras se hace scroll */
+  background-attachment: fixed;
+  /* La imagen se fija al fondo mientras se hace scroll */
 }
 
 /* Asegura que los elementos no tengan fondo para que la imagen se vea */
-body > * {
-  background-color:#2b2115c1!important;
+html,
+body>* {
+  background-color: #0a0906e5;
 }
 
 /* La clase page-container toma todo el espacio disponible excepto el ocupado por el footer */
@@ -26,14 +31,53 @@ body > * {
   min-height: 100vh;
 }
 
+
+
 /* El main crece para ocupar todo el espacio restante */
+.mainFixed{
+  padding-top: 110px;
+}
 main {
   flex: 1;
-  background-color: transparent; /* Asegura que el main no tenga fondo */
+  /* background-color: transparent; Asegura que el main no tenga  */
+}
+
+.logoFixed{
+  height: 80px;
+}
+
+@media (max-width: 600px) {
+  .mainFixed {
+    padding-top: 90px;
+  }
+
+  .logoFixed {
+    height: 60px;
+  }
+
 }
 
 /* El footer permanece en la parte inferior de la página */
 footer {
   flex-shrink: 0;
-  background-color: rgba(0, 0, 0, 0.7); /* Fondo semitransparente para el footer si se desea */
+  /* background-color: rgba(0, 0, 0, 0.7); Fondo semitransparente para el footer si se desea */
+}
+
+
+.custom-pagination .MuiPaginationItem-root {
+  background-color: #7f7668;
+  color: #0f1214;
+  /* Color de los botones no seleccionados */
+}
+
+.custom-pagination .Mui-selected {
+  background-color: #322e29 !important;
+  /* Color del botón seleccionado */
+  color: #f2d263;
+  /* Color del texto en el botón seleccionado */
+}
+
+.custom-pagination .MuiPaginationItem-root:hover {
+  background-color: #5f5f5f;
+  /* Color de fondo al pasar el ratón sobre los botones no seleccionados */
 }

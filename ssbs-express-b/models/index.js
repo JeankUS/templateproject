@@ -26,10 +26,12 @@ fs
   });
 
 Object.keys(db).forEach(modelName => {
+  console.log(`Registering model: ${modelName}`);
   if (db[modelName].associate) {
     db[modelName].associate(db);
   }
 });
+console.log(db); // Esto te mostrará todos los modelos que se están registrando
 
 db.sequelize = sequelize;
 db.Sequelize = Sequelize;

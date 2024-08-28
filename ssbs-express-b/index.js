@@ -6,7 +6,7 @@ const routes = require('./routes'); // Importa el archivo index.js de la carpeta
 
 // Middleware para habilitar CORS
 app.use(cors({
-  origin: 'http://localhost:3000', // Permite solicitudes desde este origen
+  origin: '*', // Permite solicitudes desde este origen
   methods: ['GET', 'POST', 'PUT', 'DELETE'], // Métodos permitidos
   credentials: true // Permitir envío de cookies y cabeceras de autorización
 }));

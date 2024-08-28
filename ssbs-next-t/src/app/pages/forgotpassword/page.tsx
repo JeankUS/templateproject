@@ -40,7 +40,7 @@ export default function ForgotPasswordPage() {
             justifyContent: "center",
         }}
         >
-        <Container component="main" maxWidth="xs" sx={{ backgroundColor: "rgba(255, 255, 255, 0.75)", padding: 4, borderRadius: 2 }}>
+        <Container component="main" maxWidth="xs" sx={{ bgcolor: '#bbb1a0a1', padding: 4, borderRadius: 2 }}>
             <Box
                 sx={{
                     display: "flex",

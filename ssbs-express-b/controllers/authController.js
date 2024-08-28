@@ -157,7 +157,7 @@ exports.forgotPassword = async (req, res) => {
 
     const mailOptions = {
       from: 'studiossbarber@gmail.com',  // Dirección de correo del remitente
-      to: 'elison1606@gmail.com',  // Dirección de correo del destinatario
+      to: email,  // Dirección de correo del destinatario
       subject: 'Recover your password',
       text: 'Use this temporaly password to login and change your old password',
       html : `<h1> Your temporaly password is: <strong style="color:red"> ${tempPassword}</strong> </h1>`

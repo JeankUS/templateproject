@@ -46,7 +46,11 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
       SetChangePassword(decodeToken.require_change_password)
       router.push('/');
     } catch (error) {
-      throw new Error(error instanceof Error ? error.message : 'Error al iniciar sesión');
+      if (error instanceof Error) {
+        throw new Error(error.message);
+      } else {
+        throw new Error('Error al iniciar sesión');
+      }
     }
   };
 
@@ -57,7 +61,11 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
       setUser({ token: data.token });
       router.push('/');
     } catch (error) {
-      throw new Error(error instanceof Error ? error.message : 'Error al registrarse');
+      if (error instanceof Error) {
+        throw new Error(error.message);
+      } else {
+        throw new Error('Error al registrarse');
+      }
     }
   };
 

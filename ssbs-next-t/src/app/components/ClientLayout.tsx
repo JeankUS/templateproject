@@ -7,26 +7,49 @@ import CssBaseline from "@mui/material/CssBaseline";
 import Header from "./Header";
 import Footer from "./Footer";
 
+declare module '@mui/material/styles' {
+  interface Palette {
+    customColors: {
+      gold: string;
+      white: string;
+    };
+  }
+
+  interface PaletteOptions {
+    customColors?: {
+      gold?: string;
+      white: string;
+    };
+  }
+}
+
 const theme = createTheme({
   palette: {
     primary: {
-      main: "#8C7C69", // Marrón grisáceo
+      main: "#0f1214", // Header // btns
+      dark: "#2c2925",
       contrastText: "#F2EADF", // Texto color crema claro
     },
     secondary: {
-      main: "#59453E", // Marrón oscuro
+      main: "#fff", // no se está usando de
+      light: "#fff", // Letra de titulos
       contrastText: "#F2EADF", // Texto color crema claro
     },
     background: {
-      paper: "#BFAEA8", // Fondo para elementos elevados como tarjetas, si se necesita
+      paper: "#292622", // Cards
     },
     text: {
-      primary: "#0A0A0D", // Texto negro muy oscuro
-      secondary: "#8C7C69", // Texto marrón grisáceo
+      primary: "#0f1214",
+      secondary: "#0f1214", // Texto secundario
+    },
+    customColors: {
+      gold: "#f2d263", // Color dorado
+      white: "#F2EADF",
     },
   },
   typography: {
     fontFamily: "Inter, sans-serif",
+    fontSize: 14
   },
 });
 
@@ -39,7 +62,7 @@ export default function ClientLayout({
     <ThemeProvider theme={theme}>
       <CssBaseline />
       <Header />
-      <main style={{ marginTop: '64px' }}>{children}</main>
+      <main className="mainFixed">{children}</main>
       <Footer />
     </ThemeProvider>
   );
